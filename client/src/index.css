@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+/* Ai generated (chatgpt) */
+@theme {
+  /* Core brand colors */
+  --color-primary: #0EA5E9;      /* Sky blue - main accent (CTA, links) */
+  --color-primary-hover: #0284C7; /* Darker sky blue - hover effect */
+  --color-secondary: #00A991;    /* Teal - secondary accent */
+
+  /* Backgrounds */
+  --color-default: #F9FAFB;   /* Soft light gray background */
+  --color-subtle: #F3F4F6;    /* Lighter section background */
+  --color-card: #FFFFFF;      /* Card/section background */
+  --color-hover: #EFF6FF;     /* Light blue hover */
+
+  /* Text colors */
+  --color-defaultTxt: #1F2937; /* Slate-800 - main body text */
+  --color-mutedTxt: #6B7280;   /* Gray-500 - subtitles/hints */
+  --color-headingTxt: #111827; /* Almost black - headings */
+  --color-linkTxt: #0EA5E9;    /* Blue links */
+  --color-invertedTxt: #FFFFFF; /* On dark buttons */
+
+  /* Borders and separators */
+  --color-defaultBorder: #E5E7EB;       /* Gray-200 - default borders */
+  --color-borderHvr: #CBD5E1; /* Gray-300 - hover border */
+
+  /* State colors */
+  --color-success: #10B981;      /* Green-500 - success toasts, badges */
+  --color-error: #EF4444;        /* Red-500 - validation, errors */
+  --color-warning: #F59E0B;      /* Amber-500 - alerts */
+  --color-info: #3B82F6;         /* Blue-500 - info states */
+
+  /* Disabled */
+  --color-disabled: #D1D5DB;     /* Gray-300 */
+  --color-disabled-bg: #F3F4F6;  /* Gray-100 */
+
+  /* fonts */
+  --font-poppins:'Poppins',sans-serif,system-ui;
+  --font-inter:'Inter',sans-serif,system-ui;
+
+  --
+}
