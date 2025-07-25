@@ -2,7 +2,7 @@
 import { MyInput } from '../ui/MyInput';
 import { cn } from '@/common/utils/cn';
 import {
-    get,
+  get,
   useFormContext,
   type FieldPath,
   type FieldValues,
@@ -20,8 +20,7 @@ export const InputField = <T extends FieldValues = FieldValues>({
     formState: { errors },
   } = useFormContext<T>();
 
-  const fieldError =  get(errors,name)
-
+  const fieldError = get(errors, name);
   return (
     <div className={cn('flex flex-col gap-1', wrapperCn)}>
       <label htmlFor={name} className={cn('font-medium', labelCn)}>

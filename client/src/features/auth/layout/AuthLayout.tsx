@@ -21,7 +21,7 @@ export const AuthLayout = ({ children, title, desc, icon: Icon }: Props) => {
               <Icon className="w-5 h-5" />
             </div>
           )}
-          <section className="px-4 flex flex-col items-center pb-2 pt-2 min-[550px]:pt-5">
+          <section className="px-4 flex flex-col items-center text-center pt-2 min-[550px]:pt-5">
             <h1 className="font-poppins font-bold text-2xl text-primary">
               {title}
             </h1>
@@ -29,7 +29,9 @@ export const AuthLayout = ({ children, title, desc, icon: Icon }: Props) => {
               {desc}
             </p>
           </section>
-          <section className="p-4 min-[550px]:px-6">{children}</section>
+          <section className="pt-2 pb-4 px-4 min-[550px]:px-6">
+            {children}
+          </section>
         </div>
       </div>
     </div>
@@ -38,7 +40,7 @@ export const AuthLayout = ({ children, title, desc, icon: Icon }: Props) => {
 
 type Props = {
   children: React.ReactNode;
-  title: string;
-  desc: string;
+  title?: string;
+  desc?: string;
   icon?: LucideIcon;
 };
