@@ -1,4 +1,5 @@
 import { AppLayout } from '@/common/layouts/AppLayout';
+import { authRoutes } from '@/features/auth/AuthRouter';
 import { Home, Order } from '@pages/_index';
 import { useRoutes, type RouteObject } from 'react-router-dom';
 
@@ -14,7 +15,7 @@ export const AppRouter = () => {
     },
   ];
 
-  const router = useRoutes([...appRouter]);
+  const router = useRoutes([...appRouter,...authRoutes]);
 
   return router;
 };
