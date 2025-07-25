@@ -14,9 +14,12 @@ export const AuthPage = () => {
   );
   const [registerSteps, setRegisterSteps] = useState<1 | 2>(1);
 
-  useEffect(() => {
-    setSearchParams({ mode });
-  }, [mode, setSearchParams]);
+useEffect(() => {
+  const currentParams = new URLSearchParams(searchParams.toString());
+  currentParams.set('mode', mode);
+  setSearchParams(currentParams);
+}, [mode, searchParams, setSearchParams]);
+
 
   const showGoogleButton =
     mode === 'login' || (mode === 'register' && registerSteps === 2);

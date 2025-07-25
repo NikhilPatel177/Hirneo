@@ -6,6 +6,7 @@ import { Heart, Mail, Package } from 'lucide-react';
 import { NavDropdown } from './NavDropdown';
 import { useState } from 'react';
 import { useAuthStore } from '@/common/store/useAuthStore';
+import { useLocation } from 'react-router-dom';
 // import { Avatar } from '@components/ui/Avatar';
 
 const navItems: NavlinkType[] = [
@@ -16,6 +17,7 @@ const navItems: NavlinkType[] = [
 
 export const Navbar = () => {
   const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
+  const location = useLocation();
 
   const { user } = useAuthStore();
   return (
@@ -41,11 +43,15 @@ export const Navbar = () => {
           {!user ? (
             <>
               <MyNavLink
-                to="/auth"
+                to={`/auth?mode=login&from=${encodeURIComponent(location.pathname)}`}
                 label="Login"
                 wrapperCn="hidden min-[800px]:flex p-2"
               />
-              <MyNavLink to="/auth" label="Register" wrapperCn="p-2" />
+              <MyNavLink
+                to={`/auth?mode=register&from=${encodeURIComponent(location.pathname)}`}
+                label="Register"
+                wrapperCn="p-2"
+              />
             </>
           ) : (
             <li className="relative">
