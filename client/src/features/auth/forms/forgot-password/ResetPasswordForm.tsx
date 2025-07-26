@@ -1,4 +1,3 @@
-import { InputField } from '@/common/components/forms/InputField';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
   resetPasswordSchema,
@@ -6,14 +5,15 @@ import {
 } from '../../schemas/passwordSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/common/components/ui/Button';
+import { PasswordField } from '@/common/components/forms/PasswordField';
 
-const Input = InputField<ResetPasswordType>;
+const Input = PasswordField<ResetPasswordType>;
 
 export const ResetPasswordForm = () => {
   const form = useForm<ResetPasswordType>({
     resolver: zodResolver(resetPasswordSchema),
   });
-  console.log(form.formState.errors)
+  console.log(form.formState.errors);
   return (
     <FormProvider {...form}>
       <form

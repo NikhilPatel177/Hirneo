@@ -3,39 +3,44 @@
 /* Ai generated (chatgpt) */
 @theme {
   /* Core brand colors */
-  --color-primary: #0EA5E9;      /* Sky blue - main accent (CTA, links) */
-  --color-primary-hover: #0284C7; /* Darker sky blue - hover effect */
-  --color-secondary: #00A991;    /* Teal - secondary accent */
+  --color-primary: #0ea5e9; /* Sky blue - main accent (CTA, links) */
+  --color-primary-hover: #0284c7; /* Darker sky blue - hover effect */
+  --color-secondary: #00a991; /* Teal - secondary accent */
 
   /* Backgrounds */
-  --color-default: #F9FAFB;   /* Soft light gray background */
-  --color-subtle: #F3F4F6;    /* Lighter section background */
-  --color-card: #FFFFFF;      /* Card/section background */
-  --color-hover: #EFF6FF;     /* Light blue hover */
+  --color-default: #f9fafb; /* Soft light gray background */
+  --color-subtle: #f3f4f6; /* Lighter section background */
+  --color-card: #ffffff; /* Card/section background */
+  --color-hover: #eff6ff; /* Light blue hover */
 
   /* Text colors */
-  --color-defaultTxt: #1F2937; /* Slate-800 - main body text */
-  --color-mutedTxt: #6B7280;   /* Gray-500 - subtitles/hints */
+  --color-defaultTxt: #1f2937; /* Slate-800 - main body text */
+  --color-mutedTxt: #6b7280; /* Gray-500 - subtitles/hints */
   --color-headingTxt: #111827; /* Almost black - headings */
-  --color-linkTxt: #0EA5E9;    /* Blue links */
-  --color-invertedTxt: #FFFFFF; /* On dark buttons */
+  --color-linkTxt: #0ea5e9; /* Blue links */
+  --color-invertedTxt: #ffffff; /* On dark buttons */
 
   /* Borders and separators */
-  --color-defaultBorder: #E5E7EB;       /* Gray-200 - default borders */
-  --color-borderHvr: #CBD5E1; /* Gray-300 - hover border */
+  --color-defaultBorder: #e5e7eb; /* Gray-200 - default borders */
+  --color-borderHvr: #cbd5e1; /* Gray-300 - hover border */
 
   /* State colors */
-  --color-success: #10B981;      /* Green-500 - success toasts, badges */
-  --color-error: #EF4444;        /* Red-500 - validation, errors */
-  --color-warning: #F59E0B;      /* Amber-500 - alerts */
-  --color-info: #3B82F6;         /* Blue-500 - info states */
+  --color-success: #10b981; /* Green-500 - success toasts, badges */
+  --color-error: #ef4444; /* Red-500 - validation, errors */
+  --color-warning: #f59e0b; /* Amber-500 - alerts */
+  --color-info: #3b82f6; /* Blue-500 - info states */
 
   /* Disabled */
-  --color-disabled: #D1D5DB;     /* Gray-300 */
-  --color-disabled-bg: #F3F4F6;  /* Gray-100 */
+  --color-disabled: #d1d5db; /* Gray-300 */
+  --color-disabled-bg: #f3f4f6; /* Gray-100 */
 
   /* fonts */
-  --font-poppins:'Poppins',sans-serif,system-ui;
-  --font-inter:'Inter',sans-serif,system-ui;
+  --font-poppins: 'Poppins', sans-serif, system-ui;
+  --font-inter: 'Inter', sans-serif, system-ui;
+}
 
+@layer base{
+  form {
+    font-family: 'Inter', sans-serif, system-ui;
+  }
 }

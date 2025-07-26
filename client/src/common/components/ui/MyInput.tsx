@@ -8,12 +8,22 @@ import {
 } from 'react-hook-form';
 import { motion } from 'motion/react';
 
+function setAutocomplete(name: string): React.HTMLInputAutoCompleteAttribute {
+  const loweredName = name.toLowerCase();
+  if (loweredName === 'email') return 'email';
+  if (loweredName === 'password' || loweredName.includes('password'))
+    return 'current-password';
+
+  return 'on';
+}
+
 export const MyInput = <T extends FieldValues = FieldValues>({
   className,
   type = 'text',
   id,
   name,
   hasError,
+  autoComplete,
 }: MyInputProps<T>) => {
   const { register } = useFormContext<T>(); // T will be inferred from FormProvider
 
@@ -26,10 +36,11 @@ export const MyInput = <T extends FieldValues = FieldValues>({
         'block w-full max-w-120 border-2 py-1 px-3 rounded-md focus:border-primary focus-within:outline-0',
         hasError && 'border-red-500 hover:border-red-400 focus:border-red-400',
         !hasError && 'border-defaultBorder hover:border-borderHvr',
-        className,
+        className
       )}
       id={id}
       {...register(name)}
+      autoComplete={autoComplete ?? setAutocomplete(name)}
     />
   );
 };
@@ -40,4 +51,5 @@ type MyInputProps<T extends FieldValues = FieldValues> = {
   id?: string;
   name: FieldPath<T>;
   hasError?: boolean;
+  autoComplete?: React.HTMLInputAutoCompleteAttribute;
 };

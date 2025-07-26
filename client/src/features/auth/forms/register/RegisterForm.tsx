@@ -29,7 +29,7 @@ export const RegisterForm = ({ step, setStep }: Props) => {
   return (
     <FormProvider {...form}>
       <form
-        className="space-y-4 font-inter"
+        className="space-y-4"
         onSubmit={form.handleSubmit(
           (data) => {
             console.log('✅ Form submitted:', data);
