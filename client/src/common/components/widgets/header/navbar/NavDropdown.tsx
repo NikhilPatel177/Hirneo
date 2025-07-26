@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import type { NavlinkType } from '@/common/types/navlinkType';
 import { MyNavLink } from '@/common/components/ui/MyNavLink';
 import { Package } from 'lucide-react';
+import { LogoutButton } from '@/features/auth/buttons/LogoutButton';
 
 const items: NavlinkType[] = [
   { label: 'Orders', href: '/orders', icon: Package },
@@ -34,9 +35,18 @@ export const NavDropdown = ({ isOpen, setIsOpen }: Props) => {
           <ul>
             {items.map(({ href, label, icon }) => (
               <li>
-                <MyNavLink to={href} label={label} icon={icon} wrapperCn='px-4 py-2' />
+                <MyNavLink
+                  to={href}
+                  label={label}
+                  icon={icon}
+                  wrapperCn="px-4 py-2"
+                />
               </li>
             ))}
+            <hr />
+            <li>
+              <LogoutButton />
+            </li>
           </ul>
         </motion.div>
       )}

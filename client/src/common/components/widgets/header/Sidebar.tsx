@@ -6,6 +6,7 @@ import { MyNavLink } from '../../ui/MyNavLink';
 import type { NavlinkType } from '@/common/types/navlinkType';
 import { useAuthStore } from '@/common/store/useAuthStore';
 import { NavLink } from 'react-router-dom';
+import { LogoutButton } from '@/features/auth/buttons/LogoutButton';
 
 const navItems: NavlinkType[] = [
   { label: 'My Profile', href: '/profile', icon: User },
@@ -19,7 +20,7 @@ export const Sidebar = () => {
 
   return (
     <div className="relative z-50">
-      {!user ? (
+      {user ? (
         <NavLink to="/auth" className="font-medium text-gray-500">
           Register
         </NavLink>
@@ -67,6 +68,10 @@ export const Sidebar = () => {
                       />
                     </li>
                   ))}
+                  <hr />
+                  <li>
+                     <LogoutButton btnCn='px-3'/>
+                  </li>
                 </ul>
               </nav>
             </motion.aside>
