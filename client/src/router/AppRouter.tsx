@@ -11,6 +11,7 @@ export const AppRouter = () => {
       children: [
         { index: true, element: <Home /> },
         { path: '/orders', element: <Order /> },
+        { path: '/favourites', element:<h1 >favourites</h1> },
       ],
     },
   ];

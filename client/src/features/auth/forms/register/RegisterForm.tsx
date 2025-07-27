@@ -8,9 +8,11 @@ import { type Dispatch, type SetStateAction } from 'react';
 import { StepOne } from './StepOne';
 import { StepTwo } from './StepTwo';
 import { Button } from '@/common/components/ui/Button';
+import { useGoogleOauthStore } from '../../store/useGoogleOauthStore';
 
 export const RegisterForm = ({ step, setStep }: Props) => {
   const form = useForm<RegisterType>({ resolver: zodResolver(registerSchema) });
+  const { setRole } = useGoogleOauthStore();
 
   const roleHasError = !!form.formState.errors.role;
 
@@ -18,6 +20,8 @@ export const RegisterForm = ({ step, setStep }: Props) => {
     const isValid = await form.trigger('role');
 
     if (isValid) {
+      const selectedRoles = form.getValues('role');
+      setRole(selectedRoles);
       setStep(2);
     } else {
       form.setError('role', {
