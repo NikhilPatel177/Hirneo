@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@config/*":["config/*"],
+            "@models/*":["models/*"],
+            "@types/*":["types/*"],
+
+            "@auth/*":["modules/auth/*"],
+        }
+    }
+}

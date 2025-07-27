@@ -1,0 +1,5 @@
+{
+    "preload": [
+        "./module-alias-register.js"
+    ]
+}
