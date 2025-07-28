@@ -20,7 +20,7 @@ export const Sidebar = () => {
 
   return (
     <div className="relative z-50">
-      {user ? (
+      {!user ? (
         <NavLink to="/auth" className="font-medium text-gray-500">
           Register
         </NavLink>
