@@ -39,8 +39,12 @@
   --font-inter: 'Inter', sans-serif, system-ui;
 }
 
-@layer base{
+@layer base {
   form {
-    font-family: 'Inter', sans-serif, system-ui;
+    font-family: var(--font-inter);
   }
+}
+
+.react-hot-toast {
+  font-family: var(--font-inter);
 }

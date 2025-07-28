@@ -1,12 +1,12 @@
 import { create } from 'zustand';
-import type { IUser } from '../types/IUser';
+import type { AuthUserType } from '../types/authUserType';
 
 type AuthStore = {
-  user: IUser | null;
+  user: AuthUserType | null;
   accessToken: string | null;
 
   setToken: (accessToken: string | null) => void;
-  setUser: (user: IUser) => void;
+  setUser: (user: AuthUserType | null) => void;
   clearAuth: () => void;
 };
 

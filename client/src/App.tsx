@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { AppRouter } from './router/AppRouter';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Toaster } from 'react-hot-toast';
+import { ToastContainer} from 'react-toastify';
 
 function App() {
   const queryClient = new QueryClient();
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <AppRouter />
-        <Toaster position='top-right'/>
+        <ToastContainer position='top-right'/>
       </QueryClientProvider>
     </BrowserRouter>
   );

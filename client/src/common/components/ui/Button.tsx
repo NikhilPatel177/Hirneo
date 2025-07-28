@@ -11,7 +11,7 @@ export const Button = ({
     <button
       type={type}
       className={cn(
-        'text-white font-medium font-poppins bg-primary w-full p-2 rounded-md hover:bg-primary-hover',
+        'text-white font-medium font-poppins bg-primary w-full p-2 rounded-md flex items-center justify-center hover:bg-primary-hover',
         className
       )}
       onClick={onClick}
