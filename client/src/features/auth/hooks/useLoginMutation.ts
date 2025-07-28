@@ -20,7 +20,7 @@ export const useLoginMutation = (
   const { setToken, setUser } = useAuthStore();
 
   return useMutation<SuccessResponse, AxiosError<ErrorResponse>, LoginType>({
-    mutationKey: ['register'],
+    mutationKey: ['login'],
     mutationFn: async (data) => {
       const res = await apiInstance.post('auth/login', data);
       return res.data;
@@ -29,7 +29,7 @@ export const useLoginMutation = (
       setToken(data.accessToken || null);
       setUser(data.userData || null);
 
-      toast.success(data.message || 'User registration successfull', {
+      toast.success(data.message || 'User login successfull', {
         autoClose: 1000,
       });
 

@@ -15,7 +15,6 @@ export const refreshingToken: RequestHandler = async (req, res) => {
     return res.status(400).json({ message: 'No refresh token provided' });
   }
 
-  console.log(refreshToken)
   try {
     const decoded = jwt.verify(refreshToken, env.REFRESH_TOKEN_SECRET) as {
       _id: string;
@@ -25,7 +24,6 @@ export const refreshingToken: RequestHandler = async (req, res) => {
     if (!user) {
       return res.status(403).json({ message: 'Invalid or expired token' });
     }
-    console.log(decoded)
     const accessToken = generateAccessToken(user);
     const newRefreshToken = generateRefreshToken(user);
 

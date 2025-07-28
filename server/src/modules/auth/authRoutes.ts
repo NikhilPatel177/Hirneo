@@ -11,6 +11,7 @@ import { loginUser } from './controllers/loginController.js';
 import { refreshingToken } from './controllers/refreshTokenController.js';
 import { isAuthenticated } from '@middlewares/isAuthenticatedMiddleware.js';
 import { getUser } from './controllers/getUserController.js';
+import { logoutUser } from './controllers/logoutController.js';
 
 const router = Router();
 
@@ -22,5 +23,7 @@ router.post('/login', validateSchema(loginSchema), loginUser);
 
 router.get('/refresh-token', refreshingToken);
 router.get('/me', isAuthenticated, getUser);
+
+router.post('/logout', isAuthenticated, logoutUser);
 
 export { router as authRoutes };
