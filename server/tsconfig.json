@@ -1,19 +1,24 @@
+// tsconfig.json
 {
-    "extends":"./tsconfig.paths.json",
-    "compilerOptions": {
-        "target":"es2022",
-        "module": "nodenext",
-        "moduleResolution": "nodenext",
-        "outDir": "./dist",
-        "rootDir": "./src",
-        "esModuleInterop": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
-        "allowJs": false,
-        "resolveJsonModule": true,
-        "sourceMap": true,
-        "allowSyntheticDefaultImports": true
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@models/*": ["models/*"],
+      "@types/*": ["types/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@auth/*": ["modules/auth/*"]
     },
-    "include": ["src/**/*"]
+    "esModuleInterop": true,
+    "moduleDetection": "force",
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
 }
