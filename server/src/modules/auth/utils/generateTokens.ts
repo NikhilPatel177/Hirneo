@@ -13,7 +13,7 @@ export const generateAccessToken = (user: IUser): string => {
 export const generateRefreshToken = (user: IUser): string => {
   return jwt.sign(
     { _id: user._id, activeRole: user.activeRole },
-    env.ACCESS_TOKEN_SECRET,
-    { expiresIn: env.ACCESS_TOKEN_EXPIRY } as jwt.SignOptions
+    env.REFRESH_TOKEN_SECRET,
+    { expiresIn: env.REFRESH_TOKEN_EXPIRY } as jwt.SignOptions
   );
 };
