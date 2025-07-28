@@ -5,7 +5,7 @@ type AuthStore = {
   user: IUser | null;
   accessToken: string | null;
 
-  setToken: (accesssToken: string) => void;
+  setToken: (accessToken: string | null) => void;
   setUser: (user: IUser) => void;
   clearAuth: () => void;
 };
