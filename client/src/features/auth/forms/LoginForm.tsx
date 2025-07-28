@@ -5,19 +5,23 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/common/components/ui/Button';
 import { PasswordField } from '@/common/components/forms/PasswordField';
 import { Link } from 'react-router-dom';
+import { useLoginMutation } from '../hooks/useLoginMutation';
+import { LoadingCircle } from '@/common/components/ui/Loaders/LoadingCircle';
+import { SuccessTick } from '@/common/components/ui/Success/SuccessTick';
 
 const Input = InputField<LoginType>;
 const PasswordInput = PasswordField<LoginType>;
 
 export const LoginForm = () => {
   const form = useForm<LoginType>({ resolver: zodResolver(loginSchema) });
+  const { mutate, isPending, isSuccess } = useLoginMutation(form.setError);
 
+  function handleOnSubmit(data: LoginType) {
+    mutate(data);
+  }
   return (
     <FormProvider {...form}>
-      <form
-        className="space-y-4"
-        onSubmit={form.handleSubmit((data) => console.log(data))}
-      >
+      <form className="space-y-4" onSubmit={form.handleSubmit(handleOnSubmit)}>
         <Input label="Email or Username" name="identifier" />
 
         <div className="relative">
@@ -30,7 +34,15 @@ export const LoginForm = () => {
           </Link>
         </div>
 
-        <Button type="submit">Login</Button>
+        <Button type="submit" isDisable={isPending}>
+          {isPending ? (
+            <LoadingCircle />
+          ) : isSuccess ? (
+            <SuccessTick />
+          ) : (
+            'Login'
+          )}
+        </Button>
       </form>
     </FormProvider>
   );
