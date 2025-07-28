@@ -32,12 +32,12 @@ const userSchema = new Schema<IUser>(
     },
     activeRole: {
       type: String,
-      enum: ['client', 'freelancer', 'admin'],
+      enum: ['client', 'freelancer'],
       default: 'client',
     },
     roles: {
       type: [String],
-      enum: ['client', 'freelancer', 'admin'],
+      enum: ['client', 'freelancer'],
       default: ['client'],
     },
     gender: {

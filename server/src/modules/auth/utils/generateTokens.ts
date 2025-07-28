@@ -2,8 +2,7 @@ import { IUser } from 'types/IUser.js';
 import jwt from 'jsonwebtoken';
 import env from '@config/env.js';
 
-
-export const generateAccessToken = async (user: IUser): Promise<string> => {
+export const generateAccessToken = (user: IUser): string => {
   return jwt.sign(
     { _id: user._id, activeRole: user.activeRole },
     env.ACCESS_TOKEN_SECRET,
@@ -11,7 +10,7 @@ export const generateAccessToken = async (user: IUser): Promise<string> => {
   );
 };
 
-export const generateRefreshToken = async (user: IUser): Promise<string> => {
+export const generateRefreshToken = (user: IUser): string => {
   return jwt.sign(
     { _id: user._id, activeRole: user.activeRole },
     env.ACCESS_TOKEN_SECRET,

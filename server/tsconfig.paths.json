@@ -5,6 +5,7 @@
             "@config/*":["config/*"],
             "@models/*":["models/*"],
             "@types/*":["types/*"],
+            "@middlewares/*":["middlewares/*"],
 
             "@auth/*":["modules/auth/*"],
         }

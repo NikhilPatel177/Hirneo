@@ -9,8 +9,8 @@ export interface IUser {
   password: string;
   phone: string;
   gender: 'male' | 'female' | 'other';
-  roles: ('client' | 'freelancer' | 'admin')[];
-  activeRole: 'client' | 'freelancer' | 'admin';
+  roles: ('client' | 'freelancer')[];
+  activeRole: 'client' | 'freelancer';
 
   isEmailVerified: boolean;
   isPhoneVerified: boolean;

@@ -87,7 +87,7 @@ export const handleGoogleOauthCallback: RequestHandler = async (req, res) => {
       }
     }
 
-    const refreshToken = await generateRefreshToken(isUser);
+    const refreshToken = generateRefreshToken(isUser);
     isUser.refreshToken = refreshToken;
     await isUser.save();
 
