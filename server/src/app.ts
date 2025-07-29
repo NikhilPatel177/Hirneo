@@ -6,6 +6,7 @@ import env from '@config/env.js';
 
 const app = express();
 
+console.log(env.FRONTEND_URI)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
