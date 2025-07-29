@@ -8,5 +8,5 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   target: 'es2022',
-  dts: false, // or true if you want .d.ts files
+  dts: true, // or true if you want .d.ts files
 });

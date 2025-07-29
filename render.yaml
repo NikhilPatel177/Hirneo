@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: server
+    name: hirneo-backend
     env: node
     rootDir: server
     buildCommand: npm install && npm run build
