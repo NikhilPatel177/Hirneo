@@ -2,7 +2,7 @@ import axios, { AxiosError } from 'axios';
 import { useAuthStore } from '../store/useAuthStore';
 
 const apiInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URI,
+  baseURL: `${import.meta.env.VITE_API_BASE_URI}/api/`,
   withCredentials: true,
 });
 
