@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "tsup",
+    "build": "echo '=== node version ===' && node -v && echo '=== bin ===' && ls -l node_modules/.bin && echo '=== tsup location ===' && which tsup && echo '=== try tsup ===' && npx tsup",
     "start": "node dist/index.js"
   },
   "dependencies": {
