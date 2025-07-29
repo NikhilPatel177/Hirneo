@@ -13,5 +13,5 @@ export const REFRESHTOKEN_COOKIE_OPTIONS = {
   secure: env.NODE_ENV === 'production',
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
   sameSite: 'none' as const,
-  path: '/refresh-token',
+  path: '/',
 };
