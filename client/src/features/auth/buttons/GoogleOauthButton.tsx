@@ -9,9 +9,13 @@ export const GoogleOauthButton = () => {
   function handleOnClick() {
     if (role) {
       const roles = role.join(',');
-      window.location.href = `http://localhost:8000/api/auth/google?role=${roles}&redirectTo=${redirectTo}`;
+      window.location.href = `${
+        import.meta.env.VITE_API_BASE_URI
+      }/api/auth/google?role=${roles}&redirectTo=${redirectTo}`;
     } else {
-      window.location.href = `http://localhost:8000/api/auth/google?role=NA`;
+      window.location.href = `${
+        import.meta.env.VITE_API_BASE_URI
+      }/api/auth/google?role=NA`;
     }
   }
 
