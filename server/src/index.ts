@@ -1,6 +1,6 @@
 import env from '@config/env.js';
 import app from './app.js';
-import http from 'node:http';
+import http from 'http';
 import { connectDb } from '@config/db.js';
 
 const server = http.createServer(app);
